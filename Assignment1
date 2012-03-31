@@ -1,20 +1,28 @@
 # I FOUND OUT HOW TO COMMENT THINGS
 
-# Testing
+
+	# Testing
+
+print'\n'
 a=1
 if a:
 	print 'Value of a is',a
 
 
-# Exercise 1.3
+
+#... Chapter 1
+
+	# Exercise 1.3
 
 
 
 print'\n \t hello'#creates a new line and tabs
-#help files are accessed for help('command')
 
-# Exercise 1.4
+#help files are accessed using help('command')
 
+	# Exercise 1.4
+
+print'\n'
 kilo=10
 t=43.5
 
@@ -23,3 +31,32 @@ mile=kilo/1.61
 avg=t/mile
 
 print'The average time per mile is',avg
+
+
+
+
+#... Chapter 2
+
+	# Testing
+print'\n'
+q=12
+print q
+
+	# Exercise 2.1
+
+# When one prints 01,010,0100,01000 Python interprets this as binary.
+# The results were 1, 8, 64, and 512 respectively.
+
+# By manipulating the two example zip codes of 02492 and 02132 I found...
+# that neither an 8 or a 9 can be present if these are to have valid syntax.
+# Any combinations that are to contain an 8 or 9 can be input as a string.
+
+	# Exercise 2.2
+
+
+print '\n5'
+x=5
+print '\nx+1' # In order for python to display the evaluation we must use a...
+	      # print statement
+
+	# Exercise 2.3
