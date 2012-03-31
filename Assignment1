@@ -11,7 +11,7 @@ if a:
 
 
 print'\n \t hello'#creates a new line and tabs
-
+#help files are accessed for help('command')
 
 # Exercise 1.4
 
