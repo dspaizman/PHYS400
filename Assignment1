@@ -65,31 +65,31 @@ print'\n'
 width=17       # integer
 height=12.0    # float 
 delimiter='.'  # string
-
-print 'if width=17, width/2 is',width/2 #Value=8 integer-incorrect answer because there are no decimals  
+ 
+print 'if width=17, width/2 is',width/2                #Value=8 integer-incorrect answer because there are no decimals  
 print'\n'
-print 'width/2.0 is',width/2.0          #Value=8.5 float-correct answer because 2.0 has a decimal   
+print 'width/2.0 is',width/2.0                         #Value=8.5 float-correct answer because 2.0 has a decimal   
 print'\n'
-print 'if height=12.0, height/3 is',height/3         #Value=4.0 float-correct answer because height has a decimal
+print 'if height=12.0, height/3 is',height/3           #Value=4.0 float-correct answer because height has a decimal
+print'\n' 
+print '1+2*5 is',1+2*5                                 #Value=11 integer
 print'\n'
-print '1+2*5 is',1+2*5                  #Value=11 integer
-print'\n'
-print 'if delimiter = ., delimiter*5 is',delimiter*5 #Value=..... string
+print 'if delimiter = ., delimiter*5 is',delimiter*5   #Value=..... string
 
 	# Exercise 2.4
 
 # using the interpreter as a calculator
 r=5;
 pi=3.14159265
-volume=(4./3)*pi*(r**3)  # We must include a decimal somewhere in the calculation...
-			 # otherwise 4/3 will be interpreted to be 1
+volume=(4./3)*pi*(r**3)        # We must include a decimal somewhere in the calculation...
+			       # otherwise 4/3 will be interpreted to be 1
 
 print'\nThe volume of a sphere with radius 5 is',volume
 
-books=60                  # number of copies purchased
-price=24.95               # base price per book
-bookstore_price=price*.6  # price per book that bookstores pay
-shipping=3+(.75*(books-1))# total shipping cost 
+books=60                       # number of copies purchased
+price=24.95                    # base price per book
+bookstore_price=price*.6       # price per book that bookstores pay
+shipping=3+(.75*(books-1))     # total shipping cost 
 total=books*bookstore_price + shipping
 print'\n','Total cost to purchase 60 books with the bookstore discount is',total
 
