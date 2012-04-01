@@ -80,8 +80,9 @@ print 'if delimiter = ., delimiter*5 is',delimiter*5   #Value=..... string
 
 # using the interpreter as a calculator
 r=5;
-pi=3.14159265
-volume=(4./3)*pi*(r**3)        # We must include a decimal somewhere in the calculation...
+import math
+
+volume=(4./3)*math.pi*(r**3)        # We must include a decimal somewhere in the calculation...
 			       # otherwise 4/3 will be interpreted to be 1
 
 print'\nThe volume of a sphere with radius 5 is',volume
@@ -95,3 +96,126 @@ print'\n','Total cost to purchase 60 books with the bookstore discount is',total
 
 
 #...Chapter 3
+
+
+
+	# Exercise 3.1
+
+print'\n'
+# goal is to see what error message we get when we call... 
+# a function before we define it.
+
+#repeat_lyrics() # purposely in the wrong place.
+
+#def print_lyrics():
+#	print "I'm a lumberjack, and I'm okay."
+#	print "I sleep all night and I work all day."
+
+#def repeat_lyrics():
+#	print_lyrics()
+
+# we find "NameError:name'repeat_lyrics' is not defined"
+
+	
+
+	# Exercise 3.2
+
+print'\n'
+
+def repeat_lyrics():
+	print_lyrics()
+	print_lyrics()
+def print_lyrics():     # purposely placed after repeat_lyrics is defined.
+	print "I'm a lumberjack, and I'm okay."
+	print "I sleep all night and I work all day."
+repeat_lyrics
+
+# we find that when repeat_lyrics is called, it executes appropriately
+
+
+	# Exercise 3.3
+
+
+# Write a function named right_justify that takes...
+# a string named s as a parameter and prints the...
+# string with enough leading spaces so that the last...
+# letter of the string is in column 70 of the display.
+print'\n'
+
+def right_justify(a):
+	b=' '
+	s=(70-len(a))*b+a
+	print s
+right_justify('Hello')
+
+
+
+	# Exercise 3.4
+
+print'\n'
+
+def print_spam():
+	print 'spam'
+
+def print_twice(one):
+	print one
+	print one
+
+def do_twice(a,b):
+	a(b)
+	a(b)
+
+do_twice(print_twice,'spam')
+print'\n'
+
+def do_four(a,b):
+	do_twice(a,b)
+	do_twice(a,b)
+do_four(print_twice,'hey!')
+
+
+	# Exercise 3.5
+
+print'\n'
+
+#goal is to create a 4 panel grid created by a function
+
+
+def draw_2by2square(plus,minus,cool):
+	
+#draws a sqaure with two rows and two columns
+	a=str(plus) 
+	b=str(minus)
+	c=str(cool)
+	d=' '
+	print a + 4*b + a + 4*b + a
+	print c + 4*d + c + 4*d + c
+	print c + 4*d + c + 4*d + c
+	print a + 4*b + a + 4*b + a
+	print c + 4*d + c + 4*d + c
+	print c + 4*d + c + 4*d + c
+	print a + 4*b + a + 4*b + a
+
+draw_2by2square('+','-','|')
+
+print'\n'
+def draw_4by4square(plus,minus,cool):
+	a=str(plus) 
+	b=str(minus)
+	c=str(cool)
+	d=' '
+	print a + 4*b + a + 4*b + a + 4*b + a + 4*b + a
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print a + 4*b + a + 4*b + a + 4*b + a + 4*b + a
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print a + 4*b + a + 4*b + a + 4*b + a + 4*b + a
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print a + 4*b + a + 4*b + a + 4*b + a + 4*b + a
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print c + 4*d + c + 4*d + c + 4*d + c + 4*d + c
+	print a + 4*b + a + 4*b + a + 4*b + a + 4*b + a
+
+draw_4by4square('+','-','|')
