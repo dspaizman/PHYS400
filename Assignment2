@@ -1,0 +1,61 @@
+#  Assignment2 Ch 4-7
+
+---------------------------------------------------
+
+		# Chapter 4............
+
+
+
+# Exercise 4.1
+
+1. Write appropriate docstrings for polygon, arc and circle.
+2. Draw a stack diagram that shows the state of the program while executing circle(bob,
+radius). You can do the arithmetic by hand or add print statements to the code.
+3. The version of arc in Section 4.7 is not very accurate because the linear approximation of the
+circle is always outside the true circle. As a result, the turtle ends up a few units away from
+the correct destination. My solution shows a way to reduce the effect of this error. Read the
+code and see if it makes sense to you. If you draw a diagram, you might see how it works.
+
+
+1.   
+
+def polygon(t, n, length):
+	
+	""" Polygon is a function which creates a 
+	    polygon with n sides of length l using turtle, t.
+	""" 
+	    
+	angle = 360.0/n
+    	polyline(t, n, length, angle)
+
+def arc(t, r, angle):
+    
+	""" Arc is a function which uses a turtle, t to draw the
+	    arc between vectors with a designated theta called angle.
+	    The radius of the arc is r.
+	"""
+
+    arc_length = 2 * math.pi * r * abs(angle) / 360
+    n = int(arc_length / 4) + 1
+    step_length = arc_length / n
+    step_angle = float(angle) / n
+
+    # making a slight left turn before the polyline reduces
+    # the error caused by the linear approximation of the arc
+    lt(t, step_angle/2)
+    polyline(t, n, step_length, step_angle)
+    rt(t, step_angle/2)
+
+
+def circle(t, r):
+    
+	""" Circle is a function that draws a circle of radius r
+	    with a turtle, t.
+	"""
+
+	arc(t, r, 360)
+
+STACK DIAGRAM
+
+CIRCLE (arc with 360 degrees)____ calls arc _____ arc calls polyline _____ polyline draws n line segments with a length and angle in degrees between them
+
