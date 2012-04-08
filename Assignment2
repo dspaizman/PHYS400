@@ -299,6 +299,23 @@ def square_root(a):
 square_root(4)
 
 # Exercise 7.3
+
+def square_root(a):
+	x=(.25*a)
+	
+	while True:
+		
+		y=(x+(a/x))/2
+		
+		if abs(y-x)<.00000001:
+			break
+		x=y
+		
+	print a,x,math.sqrt(a),abs(y-x)
+
+square_root(4)
+
+#Exercise 7.4
 			
 		
 	
