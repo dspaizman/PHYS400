@@ -316,6 +316,23 @@ def square_root(a):
 square_root(4)
 
 #Exercise 7.4
+
+def eval_loop():
+
+	"""will ask for an input and evaluate it. if you enter 'done' the loop will 	   	   end
+	"""
+	while True:
+
+		a=str(raw_input('input to be evaluated:'))
+		if a=='done':
+			print 'done!'
+			break
+		b=eval(a)
+		print b
+		
+
+
+		
 			
 		
 	
