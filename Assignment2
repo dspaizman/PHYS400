@@ -130,10 +130,156 @@ polygon(3,r)
 fd(t,r)
 lt(t,360/n)
 
+# Exercise 4.4
+
+# Create functions for letters
+Example
+
+def vert_bar(t,x):
+	"""creates a vertical bar. assumes bottom left facing east"""
+	lt(t)
+	fd(t,x)
+
+def D(t,r)
+	"""draws the letter d(capital)"""
+	vert bar(t,r)
+	bk(t,r)
+	rt(t)
+	arc(t,180,5/2)
+
 		# chapter 5.........
 
 
+#5.1-5.4
 
+
+# Exercise 5.1
+
+def check_fermat(a,b,c,n):
+	"""checks if Fermat's Last Theorem is valid: a^n +b^n =c^n for n <= than 2"""
+	if (a**n)+(b**n)==(c**n) and n>2:
+		print 'Holy smokes, Fermat was wrong!'
+	else:
+		print 'Good try, not right though'
+
+def interactive_check_fermat():
+	prompt('You are going to test Fermat's Last Theory-a^n+b^n will not = c^n if n>2')
+	prompt1('What do you want a to be?')
+	prompt2('What do you want b to be?')
+	prompt3('What do you want c to be?')
+	prompt4('What do you want n to be?')
+
+
+	print prompt
+	a=raw_input(prompt1)
+	b=raw_input(prompt2)
+	c=raw_input(prompt3)
+	n=raw_input(prompt4)
+
+	check_fermat(a,b,c,n)
+
+# Exercise 5.2
+
+def is_triangle(a,b,c):
+
+	if a>b+c:
+		print 'nope'
+	if b>a+c:
+		print 'nope'
+	if c>a+b:
+		print 'nope'
+	else:
+		print 'yes'
+
+def interactive_is_triangle():
+	prompt('You are going to see if three sticks can make a triangle')
+	prompt1('What do you want a to be?')
+	prompt2('What do you want b to be?')
+	prompt3('What do you want c to be?')
+	
+
+	print prompt
+	a=raw_input(prompt1)
+	b=raw_input(prompt2)
+	c=raw_input(prompt3)
+	
+	is_triangle(a,b,c)
+
+
+		# chapter 6.........
+#6.1-6.8
+
+# Exercise 6.1
+
+def compare(x,y):
+	if x > y:
+		return 1
+	if x == y:
+		return 0
+	if x < y:
+		return -1
+
+# Exercise 6.2
+
+def hypotenuse(x1,x2,y1,y2):
+
+	dx=x2-x1
+	return dx
+	dy=y2-y1
+	return dy
+
+	dist=math.sqrt((dx**2)+(dy**2))
+	return dist
+
+# Exercise 6.3
+
+def is_between(x,y,z):
+
+	if x <= y and y <= z:
+		print 'True'
+	else:
+		print 'False'
+
+
+# Exercise 6.5
+
+def A(m,n):
+
+	if m==0:
+		A(m,n)=n+1
+	if m > 0 and n==0:
+		A(m,n)=A(m-1,1)
+	if m > 0 and n >0:
+		A(m,n)= A(m-1,A(m,n-1))
+	return A(m,n)
+
+# Exercise 6.8
+
+def gcd(a,b):
+
+	if a>=b:
+		c=a%b
+		if c==0:
+			return b
+		if c!=0:
+			b=a
+			c=b
+	if b>=a:
+		c=a%b
+		if c==0:
+			return
+		if c!=0:
+			a=b
+			b=c
+
+
+	
+
+
+	
+
+		# chapter 7.........
+#7.2-7.5
 
 
 
