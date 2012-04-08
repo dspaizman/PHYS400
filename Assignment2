@@ -283,7 +283,22 @@ def gcd(a,b):
 
 
 
+# Exercise 7.2 Square root function-Newton Method
 
+def square_root(a):
+	x=(.25*a)
+	
+	while True:
+		print x
+		y=(x+(a/x))/2
+		if abs(y-x)<.00000001:
+			break
+		x=y
+		print x
+
+square_root(4)
+
+# Exercise 7.3
 			
 		
 	
