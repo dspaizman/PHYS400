@@ -1,23 +1,38 @@
 #  Assignment2 Ch 4-7
 
----------------------------------------------------
+#---------------------------------------------------
 
 		# Chapter 4............
 
 
+import math
+
+from TurtleWorld import*
+
+world=TurtleWorld()
+
 
 # Exercise 4.1
 
-1. Write appropriate docstrings for polygon, arc and circle.
-2. Draw a stack diagram that shows the state of the program while executing circle(bob,
-radius). You can do the arithmetic by hand or add print statements to the code.
-3. The version of arc in Section 4.7 is not very accurate because the linear approximation of the
-circle is always outside the true circle. As a result, the turtle ends up a few units away from
-the correct destination. My solution shows a way to reduce the effect of this error. Read the
-code and see if it makes sense to you. If you draw a diagram, you might see how it works.
+#1. Write appropriate docstrings for polygon, arc and circle.
+#2. Draw a stack diagram that shows the state of the program while executing circle(bob,
+#radius). You can do the arithmetic by hand or add print statements to the code.
+#3. The version of arc in Section 4.7 is not very accurate because the linear approximation of the
+#circle is always outside the true circle. As a result, the turtle ends up a few units away from
+#the correct destination. My solution shows a way to reduce the effect of this error. Read the
+#code and see if it makes sense to you. If you draw a diagram, you might see how it works.
 
 
-1.   
+#1.   
+
+def polyline(t, n, length, angle):
+    """Draw n line segments with the given length and
+    angle (in degrees) between them.
+    """
+    for i in range(n):
+        fd(t, length)
+        lt(t, angle)
+
 
 def polygon(t, n, length):
 	
@@ -35,16 +50,16 @@ def arc(t, r, angle):
 	    The radius of the arc is r.
 	"""
 
-    arc_length = 2 * math.pi * r * abs(angle) / 360
-    n = int(arc_length / 4) + 1
-    step_length = arc_length / n
-    step_angle = float(angle) / n
+	arc_length = 2 * math.pi * r * abs(angle) / 360
+	n = int(arc_length / 4) + 1
+	step_length = arc_length / n
+	step_angle = float(angle) / n
 
     # making a slight left turn before the polyline reduces
     # the error caused by the linear approximation of the arc
-    lt(t, step_angle/2)
-    polyline(t, n, step_length, step_angle)
-    rt(t, step_angle/2)
+	lt(t, step_angle/2)
+	polyline(t, n, step_length, step_angle)
+	rt(t, step_angle/2)
 
 
 def circle(t, r):
@@ -55,7 +70,76 @@ def circle(t, r):
 
 	arc(t, r, 360)
 
-STACK DIAGRAM
+#STACK DIAGRAM
 
-CIRCLE (arc with 360 degrees)____ calls arc _____ arc calls polyline _____ polyline draws n line segments with a length and angle in degrees between them
+#CIRCLE (arc with 360 degrees)____ calls arc _____ arc calls polyline _____ polyline 
+#draws n line segments with a length and angle in degrees between them
 
+
+# Exercise 4.2
+
+
+#Write an appropriately general set of functions that can draw flowers
+
+
+# We will do this using the arc function we created earlier
+
+
+def arc(t,a,r):
+	"""Arc is a function which uses a turtle, t to draw the
+	    arc between vectors with a designated angle (in degrees) called a.
+	    The radius of the arc is r. The arc is drawn either left  
+	    if dir is l and right if dir is r.
+	"""
+t=Turtle()
+n=int(20*(a/360.))
+s=(a/360.)*2*3.1415*r
+for i in range(n):
+ fd(t,s/n)
+ lt(t,a/n)
+				
+		
+# We want the turtle to draw an arc, then draw the same arc while returning to
+# its starting position
+
+def petal(t,a,r):
+"""a turtle t, draws a petal with angle a and radius r"""
+
+
+for i in range(2):
+arc(a,r)
+lt(t,180-a) # by turning 180-a we put our turtle in position to complete the petal
+	    # we turn by 180-a after completing the petal so that we can then rotate
+	    # by whatever angle we want(since we are at our initial
+            # position facing the initial direction) to draw the next petal
+
+def flower(t,n,r):
+a=360./n
+for i in range(n):
+petal(a,r)
+lt(t,a)
+
+# Exercise 4.3
+
+#Write an appropriately general set of functions that can draw shapes like this
+# Triangles within polygons. Same number of triangles as polygons.
+
+def triangle_polygon(t,n,r):
+for i in range(n)
+polygon(3,r)
+fd(t,r)
+lt(t,360/n)
+
+		# chapter 5.........
+
+
+
+
+
+
+
+			
+		
+	
+	
+	
