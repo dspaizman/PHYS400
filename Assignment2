@@ -315,6 +315,7 @@ def square_root(a):
 
 square_root(4)
 
+
 #Exercise 7.4
 
 def eval_loop():
@@ -330,8 +331,24 @@ def eval_loop():
 		b=eval(a)
 		print b
 		
+# Exercise 7.5
 
+def estimate_pi():
 
+	"""A function designed to estimate pi
+	"""
+	while True:
+		i=0
+		a=((2*math.sqrt(2))/9801)
+		b=(math.factorial(4*i)*(1103+26390*i)
+		c=(math.factorial(i))**4)
+		d=((396**(4*i))
+		e=1/(c*d)
+		x=1/a*b*e
+		if abs(x-math.pi)<1e-15:
+			print x
+			break
+		i=i+1
 		
 			
 		
