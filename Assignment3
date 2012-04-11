@@ -1,0 +1,29 @@
+# Assignment 3
+
+#------------------------------------------------------
+
+#.......Chapter 8
+
+
+
+# Exercise 8.1
+
+#Write a function that takes a string as an argument and displays the letters #backward,one per line.
+
+def backward_disp(a):
+
+	""" A function that takes a string as an argument and displays
+	    its letters backward, one per line.
+	"""
+	
+	index=1
+	while index<len(a)+1:
+		letter=a[len(a)-index]
+		print letter,'\n'
+		index=index+1
+
+backward_disp('hello')
+
+
+
+
