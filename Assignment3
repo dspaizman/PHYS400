@@ -8,6 +8,8 @@
 
 # Exercise 8.1
 
+print 'Exercise 8.1'
+
 #Write a function that takes a string as an argument and displays the letters #backward,one per line.
 
 def backward_disp(a):
@@ -24,6 +26,159 @@ def backward_disp(a):
 
 backward_disp('hello')
 
+print '\n'
+
+# Exercise 8.2
+
+print 'Exercise 8.2\n'
+
+#Modify the program to fix this error.
+
+#Least efficient way to approach the problem
+#is to print each individually, second least is this...
+
+prefixes='JKLMNOPQ'
+suffix='ack'
+
+for i in range (5):
+	print prefixes[i]+suffix
+print prefixes[5]+'u'+suffix
+print prefixes[6]+suffix
+print prefixes[7]+'u'+suffix
+
+print '\n' #This is more efficient than above...
+
+index=0
+
+for i in range (len(prefixes)):
+	if index==5:
+		print prefixes[i]+'u'+suffix
+		index=index+1
+	
+	elif index==7:
+		print prefixes[i]+'u'+suffix
+		index=index+1
+	else:
+		print prefixes[i]+suffix
+		index=index+1
+	
+		
+print '\n'
+
+# Most efficient way that I found...
+
+for char in prefixes:
+	if char== 'O':
+		print char+'u'+suffix
+	elif char== 'Q':	
+		print char+'u'+suffix # Have to use an elif statement for this to work
+				      # properly
+	else:
+		print char+suffix
+
+print '\n'
 
 
 
+# Exercise 8.3
+
+print 'Exercise 8.3\n'
+	
+# if fruit= 'banana' then fruit[:] is banana...all entries
+
+fruit='banana'
+
+print fruit[:]
+
+print'\n'
+
+
+# Exercise 8.4
+
+print 'Exercise 8.4\n'
+
+# Modify find to tell it where to start looking
+
+def find(word, letter,starting_index):
+	index = starting_index
+	while index < len(word):
+		if word[index] == letter:
+			print letter+' is located at',index
+			index = index + 1
+		else:
+			index=index+1
+	print 'done'
+
+find('hello','l',1)
+
+print '\n'
+
+
+# Exercise 8.5
+
+print'Exercise 8.5\n'
+
+# Encapsulate the code to create a function count
+
+def count(word, letter):
+
+	"""A function that takes a string and searches for the number
+	   of times a specified letter (as a string as well) 
+	   appears in the string. The function then returns this value.
+	"""
+
+	count=0
+	for char in word:
+		if char==letter:
+			count=count+1
+	print 'The letter '+letter+' is found',count,'time(s) in the word '+word
+
+count('hello','o')
+
+print '\n'
+
+
+# Exercise 8.6
+
+print 'Exercise 8.6\n'
+
+#Add third parameter--starting point
+
+def count_start(word,letter,starting_index):
+
+	"""A function that counts the number of times a letter (string)
+	   appears in a given string. One can specify the starting index.
+	"""
+	count=0
+	index=starting_index
+	while index<len(word):
+		if word[index]==letter:
+			count=count+1
+			index=index+1
+		else:
+			index=index+1
+	print 'The letter '+letter+' is found',count,' time(s) in the word '+word+' starting at index',starting_index
+
+count_start('hello','l',3) #because we are starting after the first l, we 
+			   #expect to find 1.
+
+print '\n'
+
+
+# Exercise 8.7
+
+print 'Exercise 8.7\n'
+
+name ='banana'
+letter='a'
+print name.count(letter)
+
+print'\n'
+
+
+# Exercise 8.8
+
+# The second error in the function is that the loop
+# has a condition of j>0. In order to include the the 
+# final i and j values, 3 and 0 the condition needs to 
+# be change to include 0. So j>=0
