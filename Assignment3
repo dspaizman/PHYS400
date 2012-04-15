@@ -1,5 +1,8 @@
 # Assignment 3
 
+#Exercise 8.1, 8.2, 8.4, 8.5, 8.6, 8.9, 8.10
+#Exercise 10.1, 10.2, 10.3, 10.4
+#Exercise 11.1, 11.2, 11.3, 11.4, 11.5
 #------------------------------------------------------
 
 #.......Chapter 8
@@ -182,3 +185,185 @@ print'\n'
 # has a condition of j>0. In order to include the the 
 # final i and j values, 3 and 0 the condition needs to 
 # be change to include 0. So j>=0
+
+
+
+
+# Exercise 8.9
+
+print 'Exercise 8.9\n'
+
+def is_palindrome(a):
+	
+	"""This is a function that takes a string and informs the user whether 
+	   or not the string which they have input is a palindrome
+	"""
+	if a==a[::-1]:
+		print a+' is a palindrome'
+	else:
+		print a+' is not a palindrome'
+
+is_palindrome('kool')
+is_palindrome('racecar')
+
+print '\n'
+
+#-------------------------------------------------------------------
+
+#......Chapter 10
+
+
+
+# Exercise 10.1
+
+print 'Exercise 10.1\n'
+
+
+def count_sum(a):
+
+	"""Takes a list, a, and returns the cumulative sum.
+	"""
+	b=[a[0]]
+	
+	for i in range(len(a)):
+		if i>0:
+			b.append(a[i]+b[i-1])
+	print b
+
+a=[1,2,3]
+count_sum(a)
+
+
+print '\n'
+
+
+# Exercise 10.2
+
+print 'Exercise 10.2\n'
+
+def chop(a):
+
+	"""Modifies the list a by removing the first and last entries.
+	"""
+
+	del a[0]
+	del a[len(a)-1]
+
+	print a
+
+a=['a','b','n','m','l']
+chop(a)
+
+print '\n'
+
+
+# Exercise 10.3
+
+print 'Exercise 10.3\n'
+
+def is_sorted(a):
+
+	"""Tells the user whether or not the list a is sorted in ascending order/
+	"""
+
+	for i in range(len(a)-1):
+		x=i+1
+		if a[x]<a[i]:
+			print a[i]
+			print a[x]
+			print 'False, list is not sorted :('
+			break
+		elif a[len(a)-1]>a[len(a)-2]:
+			print 'True. List is sorted!'
+
+a=['a','b']
+is_sorted(a)
+
+b=['b','a']
+is_sorted(b)
+
+print '\n'
+
+
+# Exercise 10.4
+
+print 'Exercise 10.4\n'
+
+def anagram(a,b):
+
+	""" Takes two strings, a and b, and checks if b is an anagram.
+	    Returns True or False.
+	"""
+	
+	c=list(a)
+	d=list(b)
+	count_d=[0]*(len(d))
+	if b in a:
+		print 'True'
+		
+	
+	for i in range(len(d)):
+		for j in range(len(c)):
+			
+			if d[i] in a[j]:
+				count_d[i]=1
+			print d[i]
+			print c[j]
+			print count_d[i]
+
+	if sum(count_d)==len(d):
+		print 'True'
+	else:
+		print 'False'
+				
+
+a='banana'
+b='aw'
+anagram(a,b)
+
+print '\n'
+
+
+#----------------------------------------------------------------------------
+
+#................ Chapter 11
+
+
+# Exercise 11.1
+
+print 'Exercise 11.1\n'
+
+def check_dict(a):
+
+	"""Checks whether the string a is in the dictionary. Returns True or False.
+	"""
+	b=[]
+	c=open('words.txt')
+	for line in c:
+		d=line.strip()
+		b.append(d)
+	if a in b:
+		print 'True'
+	else:
+		print 'False'
+
+check_dict('aa')
+
+print '\n'
+
+
+# Exercise 11.2
+
+print 'Exercise 11.2\n'
+
+def histogram(s):
+	
+	d=dict()
+	for c in s:
+		
+		d[c]=1
+		d.get('c',d[c])
+		
+	return d
+
+
