@@ -366,4 +366,53 @@ def histogram(s):
 		
 	return d
 
+print '\n'
+
+
+# Exercise 11.3
+
+print 'Exercise 11.3\n'
+
+def histogram(s):
+	d=dict()
+	for c in s:
+		if c in d:
+			d[c]+=1
+		else:
+			d[c]=1
+	return d
+
+def print_hist(a):
+	b=histogram(a)
+	e=sorted(b)
+	for c in e:
+		print c,b[c]
+
+a='banana'
+print_hist(a)
+
+print '\n'
+
+
+# Exercise 11.4
+
+print 'Exercise 11.4\n'
+
+def reverse_lookup(d,v):
+	t=[]
+	for k in d:
+		if d[k] ==v:
+			t.append(k)
+			return t
+	raise ValueError
+
+print '\n'
+
+
+
+		 
+
+
+		
+
 
