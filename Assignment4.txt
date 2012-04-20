@@ -14,5 +14,28 @@
 
 
 				# Chapter 12
+# Exercise 12.1
+
+print 'Exercise 12.1\n'
+
+def sumall(*a):
 
 
+	"""Takes an argument with any number of arguments and computes the sum.
+	"""
+
+	b=list(a)
+	c=sum(b)	 
+	return c
+
+a=2,3,4
+print a
+sumall(a)
+
+print '\n'
+
+
+
+# Exercise 12.2
+
+print 'Exercise 12.2\n'
