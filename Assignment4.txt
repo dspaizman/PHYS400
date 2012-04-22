@@ -39,3 +39,61 @@ print '\n'
 # Exercise 12.2
 
 print 'Exercise 12.2\n'
+
+def sort_by_length(words):
+	t = []
+	for word in words:
+		t.append((len(word), word))
+	a=max(t)
+	b=t.sort(reverse=True)
+	c=[]
+	res = []
+	for i in range(len(t)):
+		if b[i] is b[i+1]:
+			c.append(b[i])
+			d=len(c)
+			e=rand(0,len(d))
+			for char in e:
+				c[i]=d[char]
+				res.append(c[i])
+	
+		res.append(word)
+	return res
+
+print'\n'
+
+
+#Exercise 12.3
+
+print 'Exercise 12.3'\n'
+
+def most_frequent(string):
+
+	"""Takes a string and returns the most frequently used letters in decreasing 	            order.
+	"""
+	
+	a=[]
+	for i in range(len(string)):
+		print i
+		a.append(string.count(string[i]))
+		print a
+	c=zip(a,string)
+	d=sorted(c)
+	e=len(d)-1
+	for i in range(len(d)):
+		print e
+		e=e-1
+
+print '\n'
+
+
+
+# Exercise 12.4
+
+print 'Exercise 12.\n'
+
+
+
+	
+		
+	
