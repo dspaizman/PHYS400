@@ -74,26 +74,118 @@ def most_frequent(string):
 	
 	a=[]
 	for i in range(len(string)):
-		print i
+		
 		a.append(string.count(string[i]))
-		print a
+		
 	c=zip(a,string)
 	d=sorted(c)
 	e=len(d)-1
 	for i in range(len(d)):
-		print e
+		print d[e]
 		e=e-1
 
 print '\n'
 
 
 
-# Exercise 12.4
+#_______________________________________________________________________
 
-print 'Exercise 12.\n'
+				# Chapter 13
+
+# Exercise 13.1
+
+print '13.1\n'
+
+import string
+def thing(aaa):
+
+	fin=open(aaa)
+	for line in fin:
+		line=fin.readline()
+		word=line.strip()
+		hi=word.stip(string.punctuation)
+
+#_______________________________________________________________________
+
+				# Chapter 15
 
 
+
+class Point(object):
+	"""represents a point in 2-d"""
+
+
+
+# Exercise 15.1
+
+
+print 'Exercise 15.1\n'
+
+def dist(a,b):
+
+	""" Takes two points, a and b (as lists), and returns 
+	    the distance between them.
+	"""
+
+
+
+	point_a=Point()
+	point_b=Point()
+
+	point_a.x=a[0]
+	point_a.y=a[1]
+
+	point_b.x=b[0]
+	point_b.y=b[1]
+
+	distance_ab=math.sqrt( ((point_b.x-point_a.x)**2) + ((point_b.y-point_a.y)**2) )
+	return distance_ab
+	
+
+
+
+print '\n'
+
+
+# Exercise 15.2
+
+class Rectangle(object):
+
+print 'Exercise 15.3\n'
+
+
+box=Rectangle()
+box.width=10
+box.height=20
+box.corner=Point()
+box.corner.x=0.0
+box.corner.y=0.0
+
+
+def move_rectangle(box,dx,dy):
+	box.corner.x=box.corner.x+dx
+	box.corner.y=box.corner.y+dy
 
 	
-		
-	
+print '\n'
+
+
+# Exercise 15.3
+
+
+import copy
+
+print 'Exercise 15.3\n'
+
+box=Rectangle()
+box.width=10
+box.height=20
+box.corner=Point()
+box.corner.x=0.0
+box.corner.y=0.0
+
+def new_rect(box,dx,dy):
+	box2=copy.copy(box)
+
+	box2.corner.x=box.corner.x+dx
+	box2.corner.y=box.corner.y+dy	
